@@ -10,11 +10,11 @@ By centralizing these definitions, we ensure that producers (like `tidsapparat` 
 
 ## ✨ Features
 
-*   **Domain-Driven Schemas:** Cleanly separated packages for `schedule`, `news`, and `common` types.
-*   **Schema Evolution:** Built-in versioning (e.g., `v: 1`) in every payload to handle rolling updates and breaking changes.
-*   **Strict Validation:** Every event type implements a `Validate()` method to ensure data integrity before it hits the wire.
-*   **Redis-Ready:** Designed for easy serialization into JSON payloads for Redis Pub/Sub or Streams.
-*   **Industrial Grade:** Automated versioning via Semantic Release and a multi-version Go matrix CI.
+- **Domain-Driven Schemas:** Cleanly separated packages for `schedule`, `news`, and `common` types.
+- **Schema Evolution:** Built-in versioning (e.g., `v: 1`) in every payload to handle rolling updates and breaking changes.
+- **Strict Validation:** Every event type implements a `Validate()` method to ensure data integrity before it hits the wire.
+- **Redis-Ready:** Designed for easy serialization into JSON payloads for Redis Pub/Sub or Streams.
+- **Industrial Grade:** Automated versioning via Semantic Release and a multi-version Go matrix CI.
 
 ## 📁 Repository Structure
 
@@ -23,3 +23,4 @@ pkg/
 ├── common/      # Shared types (ActionTypes, Envelopes)
 ├── news/        # News and announcement schemas
 └── schedule/    # Timetable and agenda schemas
+```

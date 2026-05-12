@@ -7,17 +7,18 @@ run:
 linters:
   # v2: Ersetzt das alte 'disable-all: true'
   default: none
-  
+
   enable:
-    - errcheck     
-    - govet        
-    - staticcheck   
-    - unused      
-    - revive        
-    - gocritic      
-    - godot         
-    - misspell      
-    - whitespace    
+    - errcheck
+    - govet
+    - staticcheck
+    - unused
+    - revive
+    - gocritic
+    - godot
+    - misspell
+    - whitespace
+    - tagalign
 
   settings:
     revive:
@@ -34,9 +35,21 @@ linters:
 
     gocritic:
       enabled-checks:
-        - rangeValCopy 
+        - rangeValCopy
         - ruleguard
+
+    tagalign:
+      align: true
+      sort: true
 
 issues:
   max-issues-per-linter: 0
   max-same-issues: 0
+
+formatters:
+  enable:
+    - gofumpt
+
+  settings:
+    gofumpt:
+      extra-rules: true

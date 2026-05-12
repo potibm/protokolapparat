@@ -1,15 +1,14 @@
 [tools]
 go = "1.26"
 golangci-lint = "2.11.4"
-"go:golang.org/x/pkgsite/cmd/pkgsite"= "latest"
+"go:golang.org/x/pkgsite/cmd/pkgsite" = "latest"
+"go:github.com/icholy/gomajor" = "0.15.0"
+"go:github.com/rhysd/actionlint/cmd/actionlint" = "latest"
+dprint = "latest"
 
 [tasks."test"]
 description = "Run tests"
-run = "go test-v - race ./..."
-
-[tasks."lint"]
-description = "Run linters"
-run = "golangci-lint run ./..."
+run = "go test -v -race ./..."
 
 [tasks."doc"]
 description = "Generate documentation"
@@ -18,3 +17,24 @@ run = "pkgsite"
 [tasks."tidy"]
 description = "Run go tidy"
 run = "go mod tidy"
+
+[tasks."deps:update"]
+description = "Update all dependencies across the project"
+run = """
+  go get -u -t ./...
+  go mod tidy
+  gomajor list
+  mise upgrade -i
+"""
+
+[tasks."fmt"]
+description = "Auto-format Markdown and YAML"
+run = "dprint fmt"
+
+[tasks."lint"]
+description = "Check formatting and GitHub Actions"
+run = """
+golangci-lint run ./...
+dprint check
+actionlint
+"""
