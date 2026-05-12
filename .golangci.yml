@@ -1,0 +1,42 @@
+version: "2"
+
+run:
+  timeout: 5m
+  modules-download-mode: readonly
+
+linters:
+  # v2: Ersetzt das alte 'disable-all: true'
+  default: none
+  
+  enable:
+    - errcheck     
+    - govet        
+    - staticcheck   
+    - unused      
+    - revive        
+    - gocritic      
+    - godot         
+    - misspell      
+    - whitespace    
+
+  settings:
+    revive:
+      rules:
+        - name: exported
+          severity: warning
+        - name: package-comments
+          severity: warning
+        - name: blank-imports
+        - name: dot-imports
+        - name: error-return
+        - name: error-strings
+        - name: error-naming
+
+    gocritic:
+      enabled-checks:
+        - rangeValCopy 
+        - ruleguard
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
