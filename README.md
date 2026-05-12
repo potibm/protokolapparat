@@ -10,7 +10,7 @@ By centralizing these definitions and utilizing **Go Generics**, we ensure that 
 
 ## Features
 
-j **Domain-Driven Schemas:** Cleanly separated packages for `schedule` and `news`
+**Domain-Driven Schemas:** Cleanly separated packages for `schedule` and `news`
 
 - **Generic Envelope (`common.Event[T]`):** A single, type-safe event wrapper for all actions (Create, Update, Delete, Sync).
 
