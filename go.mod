@@ -1,6 +1,6 @@
 module github.com/potibm/protokolapparat
 
-go 1.26.3
+go 1.25.0
 
 require github.com/stretchr/testify v1.11.1
 
