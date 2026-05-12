@@ -24,6 +24,7 @@ run = """
   go get -u -t ./...
   go mod tidy
   gomajor list
+  npx actions-up
   mise upgrade -i
 """
 
