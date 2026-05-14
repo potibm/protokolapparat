@@ -15,7 +15,7 @@ type Entry struct {
 	ExternalURL string    `json:"external_url"`
 	StartTime   string    `json:"start_time"` // RFC3339
 	EndTime     string    `json:"end_time"`   // RFC3339
-	Hidden      bool      `json:"hidden"`
+	IsHidden    bool      `json:"is_hidden"`
 	Category    *Category `json:"category,omitempty"`
 	Location    *Location `json:"location,omitempty"`
 }

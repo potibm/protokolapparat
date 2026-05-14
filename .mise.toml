@@ -39,3 +39,11 @@ golangci-lint run ./...
 dprint check
 actionlint
 """
+
+[tasks."lint:fix"]
+description = "Fix formatting"
+run = """
+golangci-lint run --fix ./...
+mise run fmt
+actionlint
+"""
